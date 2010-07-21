@@ -14,6 +14,9 @@
 DataSourceIds.Post = SC.Record.extend(
 /** @scope DataSourceIds.Post.prototype */ {
 
-  // TODO: Add your own code here.
+  title: SC.Record.attr(String),
+  blog: SC.Record.toOne('DataSourceIds.Blog',{
+    inverse: 'posts'
+  })
 
 }) ;

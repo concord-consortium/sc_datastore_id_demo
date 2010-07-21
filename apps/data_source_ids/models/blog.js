@@ -13,7 +13,10 @@
 */
 DataSourceIds.Blog = SC.Record.extend(
 /** @scope DataSourceIds.Blog.prototype */ {
-
+  title: SC.Record.attr(String),
+  posts: SC.Record.toMany('DataSourceIds.Post',{
+    inverse: 'blog'
+  })
   // TODO: Add your own code here.
 
 }) ;
