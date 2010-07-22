@@ -38,11 +38,11 @@ test("creating a new post in a blog requires fixing references", function() {
     
     store.commitRecords();    
     afterStatusChange(post, function () {
-      ok(post.get('id') !== "local_id_1", "created post record no longer has a local id (it has " + post.get('id') + ")");
+      ok(post.get('id') !== "local_id_1", "created post record no longer has a local id");
 
       var blogPost = blog.get('posts').objectAt(0);
-      equals(blogPost.get('id'), 'local_id_1', 'blog\'s post still has original id');      
-      ok(blogPost.get('isError'), 'blog\'s post is actually an error: ' + blogPost.get('errorObject'));
+      equals(blogPost.get('id'), 'local_id_1', "blog's post still has original id");      
+      ok(blogPost.get('isError'), "blog's post is actually an error: " + blogPost.get('errorObject'));
     });
   });  
 });
